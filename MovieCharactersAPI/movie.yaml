@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    ports:
+      - 8085:8080
+    container_name: movieAPI
+  db:
+    image: postgres
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_PASSWORD: post
+      POSTGRES_USER: po
+      POSTGRES_DB: movieDockerDB
+    container_name: movieDB
